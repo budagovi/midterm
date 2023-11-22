@@ -17,7 +17,7 @@ export class UserComponent {
 
   displayService = inject(DisplayService);
 
-  onClick = () => {
+  onClick() {
     this.displayService.display(this.childUsers);
   }
 
@@ -43,4 +43,27 @@ export class UserComponent {
     phoneNumber: new FormControl('', {validators: [Validators.required, Validators.minLength(9)], nonNullable: true}),
     email: new FormControl('', {validators: [Validators.required, Validators.minLength(8)], nonNullable: true})
   })
+
+
+  onSubmit() {
+
+    const newUser:ChildUser = {
+      id: (this.childUsers.length+1).toString(),
+      firstname:this.userForm.get('firstname')!.value,
+      lastname:this.userForm.get('lastname')!.value,
+      dateOfBirth: new Date(this.userForm.get('dateOfBirth')!.value),
+      email:this.userForm.get('email')!.value,
+      phoneNumber:this.userForm.get('phoneNumber')!.value,
+    }
+
+    this.childUsers.push(newUser);
+
+
+    this.userForm.get('firstname')?.reset();
+    this.userForm.get('lastname')?.reset();
+    this.userForm.get('dateOfBirth')?.reset();
+    this.userForm.get('phoneNumber')?.reset();
+    this.userForm.get('email')?.reset();
+  }
+
 }

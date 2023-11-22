@@ -3,7 +3,7 @@
   </ul>
 
 
-  <form [formGroup]="userForm">
+  <form [formGroup]="userForm" (submit)="onSubmit()">
     <h2>Reactive Form</h2>
     <label for="firstname"> Firstname:</label>
     <input type="text" formControlName="firstname" id="firstname">
@@ -20,6 +20,7 @@
     <label for="email"> Email:</label>
     <input type="text" formControlName="email" id="email">
 
+    <button type="submit">save</button>
   </form>
 
 
