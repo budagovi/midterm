@@ -11,6 +11,6 @@
 <div class="task-3">
   <h1>Array from child component</h1>
   <ul *ngFor="let u of childUsers">
-    <li>{{u.id}} {{u.firstname}} {{u.lastname}} {{u.dateOfBirth}} {{u.email}} {{u.lastname}}</li>
+    <li>{{u.id}} {{u.firstname}} {{u.lastname}} {{u.dateOfBirth.getFullYear()}}/{{u.dateOfBirth.getMonth()+1}}/{{u.dateOfBirth.getDate()}} {{u.email}} {{u.phoneNumber}}</li>
   </ul>
 </div>

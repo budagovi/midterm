@@ -1,5 +1,5 @@
 <ul *ngFor="let u of inputUsers">
-    <li>{{u.id}} {{u.firstname}} {{u.lastname}} {{u.dateOfBirth}} {{u.email}} {{u.phoneNumber}}</li>
+    <li>{{u.id}} {{u.firstname}} {{u.lastname}} {{u.dateOfBirth.getFullYear()}}/{{u.dateOfBirth.getMonth()+1}}/{{u.dateOfBirth.getDate()}} {{u.email}} {{u.phoneNumber}}</li>
   </ul>
 
 
@@ -20,7 +20,7 @@
     <label for="email"> Email:</label>
     <input type="text" formControlName="email" id="email">
 
-    <button type="submit">save</button>
+    <button type="submit" [disabled]="userForm.invalid" >save</button>
   </form>
 
 
