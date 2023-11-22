@@ -1,0 +1,27 @@
+<ul *ngFor="let u of inputUsers">
+    <li>{{u.id}} {{u.firstname}} {{u.lastname}} {{u.dateOfBirth}} {{u.email}} {{u.phoneNumber}}</li>
+  </ul>
+
+
+  <form [formGroup]="userForm">
+    <h2>Reactive Form</h2>
+    <label for="firstname"> Firstname:</label>
+    <input type="text" formControlName="firstname" id="firstname">
+
+    <label for="firstname"> Lastname:</label>
+    <input type="text" formControlName="lastname" id="lastname">
+
+    <label for="dob"> Date:</label>
+    <input type="date" formControlName="dateOfBirth" id="dob">
+
+    <label for="phone"> Phone:</label>
+    <input type="text" formControlName="phoneNumber" id="phone">
+
+    <label for="email"> Email:</label>
+    <input type="text" formControlName="email" id="email">
+
+  </form>
+
+
+  <button (click)="onClick()">Service Hnadler</button>
+
